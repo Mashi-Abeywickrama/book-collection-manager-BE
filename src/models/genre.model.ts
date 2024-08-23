@@ -1,8 +1,9 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { IGenre } from '../interface/dbInterfaces';
 
-const GenreSchema: Schema = new Schema({
+const genreSchema =  new Schema({
     name: { type: String, required: true, unique: true },
 });
+const Genre = model<IGenre>('Genre', genreSchema);
 
-export default mongoose.model<IGenre>('Genre', GenreSchema);
+export default Genre;
