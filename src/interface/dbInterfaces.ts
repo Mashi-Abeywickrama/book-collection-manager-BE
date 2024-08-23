@@ -11,18 +11,11 @@ export interface IGenre {
     name: string;
 }
 
-export interface IAuthor {
-    name: string;
-    bio?: string;
-    birthDate?: Date;
-    deathDate?: Date;
-}
-
 export interface IBook {
     title: string;
     isbn: string;
-    author: mongoose.Schema.Types.ObjectId;
-    genre: mongoose.Schema.Types.ObjectId;
+    author: string;
+    genre: mongoose.Schema.Types.ObjectId | IGenre;
     publicationDate: Date;
     summary?: string;
     coverImg?: string;

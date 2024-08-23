@@ -9,7 +9,7 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
     if (error) {
         return res.status(400).json({ message: 'Validation error', details: error.details.map((detail: any) => detail.message) });
     }
-    const { email, password } = req.body;
+    const { email, password } = value;
 
     try {
         // Check if user exists
