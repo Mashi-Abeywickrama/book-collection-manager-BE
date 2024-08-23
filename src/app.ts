@@ -6,7 +6,6 @@ import connectDB from './config/db.config';
 import errorHandler from './errorHandler/errorHandler';
 import authRoutes from './routes/authRoutes';
 
-
 const app = express();
 
 connectDB();
