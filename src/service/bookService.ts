@@ -14,6 +14,14 @@ export const findBook = async (id: string): Promise<IBook | null> => {
         .exec();
 };
 
+export const createBook = async (book: IBook): Promise<IBook> => {
+    return await Book.create(book);
+};
+
+export const updateBook = async (id: string, book: Partial<IBook>): Promise<IBook | null> => {
+    return await Book.findByIdAndUpdate(id, book, { new: true }).exec();
+};
+
 export const deleteBook = async (id: string): Promise<IBook | null> => {
     return await Book.findByIdAndDelete(id).exec();
 };
