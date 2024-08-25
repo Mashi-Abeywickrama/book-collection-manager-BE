@@ -17,8 +17,8 @@ export const createBookSchema = Joi.object({
     genre: Joi.string().required(),
     publicationDate: Joi.date().required(),
     isbn: Joi.string().required(),
-    summary: Joi.string(),
-    coverImg: Joi.string(),
+    summary: Joi.string().allow(null).optional().empty(''),
+    coverImg: Joi.string().allow(null).optional().empty(''),
 });
 
 export const updateBookSchema = Joi.object({
@@ -30,3 +30,7 @@ export const updateBookSchema = Joi.object({
     summary: Joi.string().allow(null).optional().empty(''),
     coverImg: Joi.string().allow(null).optional().empty(''),
 }).min(1);
+
+export const createGenreSchema = Joi.object({
+    name: Joi.string().required(),
+});

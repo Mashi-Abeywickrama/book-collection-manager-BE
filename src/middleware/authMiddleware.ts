@@ -27,7 +27,6 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
                 userId: verified.userId,
                 email: verified.email
             };
-            console.log("User",verified);
             next();
             
         } catch (error) {
