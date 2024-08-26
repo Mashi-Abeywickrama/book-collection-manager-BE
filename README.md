@@ -12,8 +12,7 @@ Db - Mongoose
 3. MongoDBCompass
     You can download it from the [official website](https://www.mongodb.com/products/tools/compass) if its not already installed.
 4. Web Browser
-5. MySQL
-6. Postman (for testing)
+5. Postman (for testing)
 
 ## How to run the application
   Clone the web application from the github.
