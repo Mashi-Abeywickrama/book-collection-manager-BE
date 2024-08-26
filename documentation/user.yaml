@@ -1,0 +1,90 @@
+paths:
+  /api/login:
+    post:
+      tags:
+        - Auth
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  example: "user@example.com"
+                password:
+                  type: string
+                  format: password
+                  example: "P@ssw0rd!"
+      responses:
+        '200':
+          description: User successfully logged in, returns a JWT token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        '400':
+          description: Validation error
+        '401':
+          description: Invalid credentials
+
+  /api/register:
+    post:
+      tags:
+        - Auth
+      summary: User registration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - email
+                - password
+              properties:
+                username:
+                  type: string
+                  example: "newuser"
+                email:
+                  type: string
+                  example: "newuser@example.com"
+                password:
+                  type: string
+                  format: password
+                  example: "P@ssw0rd!"
+      responses:
+        '201':
+          description: User successfully registered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "User added successfully"
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: "60c72b2f9b1d4f001e8d7f45"
+                      username:
+                        type: string
+                        example: "newuser"
+                      email:
+                        type: string
+                        example: "newuser@example.com"
+        '400':
+          description: Validation error or user already exists
