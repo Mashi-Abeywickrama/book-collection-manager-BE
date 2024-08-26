@@ -34,4 +34,6 @@ Run test cases
 To format files
 
 	npm run format
+To seed database, create seed.ts file in src folder and run the following command.
 
+	npm run seed
