@@ -1,0 +1,72 @@
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+  schemas:
+    User:
+      type: object
+      required:
+        - username
+        - email
+        - password
+      properties:
+        id:
+          type: string
+          example: "60c72b2f9b1d4f001e8d7f45"
+        username:
+          type: string
+          example: "newuser"
+        email:
+          type: string
+          example: "newuser@example.com"
+        password:
+          type: string
+          format: password
+          example: "P@ssw0rd!"
+
+    Book:
+      type: object
+      required:
+        - title
+        - author
+        - genre
+        - publicationDate
+      properties:
+        id:
+          type: string
+          example: 5f8d04b3b54764421b7156d9
+        title:
+          type: string
+          example: "The Great Gatsby"
+        author:
+          type: string
+          example: "F. Scott Fitzgerald"
+        genre:
+          type: string
+          example: "5f8d04b3b54764421b7156d9"
+        publicationDate:
+          type: string
+          format: date
+          example: "1925-04-10"
+        isbn:
+          type: string
+          example: "9780743273565"
+        summary:
+          type: string
+          example: "A novel about the American dream."
+        coverImg:
+          type: string
+          example: "/images/covers/great-gatsby.jpg"
+    Genre:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: string
+          example: "60c72b2f9b1d4f001e8d7f45"
+        name:
+          type: string
+          example: "Science Fiction"
